@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="6dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <!-- USER NAME -->
+        <TextView
+            android:id="@+id/adminUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Name"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <!-- PRODUCT NAME -->
+        <TextView
+            android:id="@+id/adminProductname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/adminUserName"
+            android:layout_marginTop="6dp"
+            android:text="Product Name"
+            android:textColor="#444444"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- PRICE -->
+        <TextView
+            android:id="@+id/adminPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/adminProductname"
+            android:layout_marginTop="6dp"
+            android:text="₹120"
+            android:textColor="#2E7D32"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <!-- QUANTITY -->
+        <TextView
+            android:id="@+id/adminQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/adminPrice"
+            android:layout_alignBaseline="@id/adminPrice"
+            android:layout_marginStart="16dp"
+            android:text="Qty: 2"
+            android:textColor="#555555"
+            android:textSize="14sp" />
+
+        <!-- STATUS -->
+        <TextView
+            android:id="@+id/adminStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_below="@id/adminPrice"
+            android:layout_marginTop="10dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:gravity="center"
+            android:text="PENDING"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:backgroundTint="#FFD600"
+            android:background="@drawable/status_bg" />
+
+        <!-- CHANGE STATUS BUTTON -->
+        <Button
+            android:id="@+id/btnChangeStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignBaseline="@id/adminStatus"
+            android:layout_toEndOf="@id/adminStatus"
+            android:layout_marginStart="12dp"
+            android:text="Change"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:backgroundTint="#00C853" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

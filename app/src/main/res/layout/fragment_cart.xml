@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cartFragmentContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    tools:context=".CartFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Header -->
+        <TextView
+            android:id="@+id/yourcartTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Cart"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:padding="16dp"
+            android:background="@android:color/white"
+            android:elevation="6dp" />
+
+        <!-- Cart Items -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/CArtRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/yourcartTv"
+            android:layout_above="@id/bottomActionLayout"
+            android:padding="8dp"
+            android:clipToPadding="false" />
+
+        <!-- Bottom Action Bar -->
+        <LinearLayout
+            android:id="@+id/bottomActionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:background="@android:color/white"
+            android:elevation="8dp">
+
+            <Button
+                android:id="@+id/btnBackToMainActivity"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Back"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:backgroundTint="#E0E0E0" />
+
+            <View
+                android:layout_width="12dp"
+                android:layout_height="0dp" />
+
+            <Button
+                android:id="@+id/btnCartToOrder"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Order"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#00C853" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

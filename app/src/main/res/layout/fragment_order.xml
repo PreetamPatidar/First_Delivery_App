@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/orderFragmentContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    tools:context=".OrderFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/orderTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Orders"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="26sp"
+            android:padding="16dp" />
+
+        <!-- Orders List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orderRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/orderTitle"
+            android:layout_above="@id/btnOrderToMainActivity"
+            android:padding="8dp" />
+
+        <!-- Back Button -->
+        <Button
+            android:id="@+id/btnOrderToMainActivity"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="12dp"
+            android:text="Back"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#2962FF" />
+
+    </RelativeLayout>
+
+</FrameLayout>

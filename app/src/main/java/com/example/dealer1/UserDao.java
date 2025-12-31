@@ -1,0 +1,21 @@
+package com.example.dealer1;
+
+
+
+import androidx.room.Dao;
+import androidx.room.Insert;
+import androidx.room.Query;
+
+@Dao
+public interface UserDao {
+
+    @Insert
+    void insertUser(User user);
+
+    @Query("SELECT * FROM usersDb WHERE email = :email LIMIT 1")
+    User getUserByEmail(String email);
+
+    @Query("SELECT * FROM usersDb WHERE email = :email AND password = :password LIMIT 1")
+    User login(String email, String password);
+}
+

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:padding="12dp"
+    android:background="@android:color/white"
+    android:elevation="4dp">
+
+    <!-- Product Name -->
+    <TextView
+        android:id="@+id/orderProductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
+
+    <!-- Quantity -->
+    <TextView
+        android:id="@+id/orderQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/orderProductName"
+        android:layout_marginTop="6dp"
+        android:text="Quantity: 1"
+        android:textSize="16sp"
+        android:textColor="#616161" />
+
+    <!-- Price -->
+    <TextView
+        android:id="@+id/orderPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/orderQuantity"
+        android:layout_marginTop="4dp"
+        android:text="₹ 0"
+        android:textSize="16sp"
+        android:textColor="#388E3C" />
+
+    <!-- Status -->
+    <TextView
+        android:id="@+id/orderStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/orderPrice"
+        android:layout_marginTop="6dp"
+        android:padding="6dp"
+        android:background="@drawable/status_bg"
+        android:text="Pending"
+        android:textSize="14sp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <!-- Track Button -->
+    <Button
+        android:id="@+id/btnOrderTrack"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/orderStatus"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#2962FF"
+        android:text="Track"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/btnOrderTrack"
+        android:layout_marginTop="12dp"
+        android:background="#E0E0E0" />
+
+</RelativeLayout>

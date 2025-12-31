@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    tools:context=".SettingFragment">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/dealerTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="My Profile"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="26sp" />
+
+    <!-- Profile Card -->
+    <LinearLayout
+        android:id="@+id/profileCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dealerTv"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@android:color/white"
+        android:elevation="6dp">
+
+        <TextView
+            android:id="@+id/userNameSetting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User Name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/emailIdSetting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="email@example.com"
+            android:textSize="16sp"
+            android:textColor="#666666" />
+
+    </LinearLayout>
+
+    <!-- Dark Mode Card -->
+
+
+
+    <!-- Logout Button -->
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_above="@id/btnlogoutToMainActivity"
+        android:layout_margin="16dp"
+        android:text="Logout"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#D32F2F" />
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/btnlogoutToMainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:text="Back"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#2962FF" />
+
+    <!-- Fragment Container (unchanged) -->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</RelativeLayout>

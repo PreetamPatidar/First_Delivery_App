@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:padding="12dp"
+    android:background="@android:color/white"
+    android:elevation="6dp"
+    android:clipToPadding="false">
+
+    <!-- Product Image -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/image_placeholder" />
+
+    <!-- Product Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_below="@id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Product Title"
+        android:textAllCaps="true"
+        android:textSize="26sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp" />
+
+    <!-- Product Price -->
+    <TextView
+        android:id="@+id/price"
+        android:layout_below="@id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="₹ 0"
+        android:textSize="20sp"
+        android:textColor="#388E3C"
+        android:layout_marginTop="6dp" />
+
+    <!-- Quantity Input -->
+    <EditText
+        android:id="@+id/quantities"
+        android:layout_below="@id/price"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:layout_alignParentStart="true"
+        android:hint="Qty"
+        android:inputType="number"
+        android:digits="0123456789"
+        android:gravity="center"
+        android:background="@drawable/edit_text_bg"
+        android:textSize="16sp" />
+
+    <!-- Buy Button -->
+
+
+    <!-- Product Description -->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBuy"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_below="@id/price"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="11dp"
+        android:backgroundTint="#2962FF"
+        android:background="@drawable/button_hover"
+        android:drawableLeft="@android:drawable/ic_input_add"
+        android:drawablePadding="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/add_to_cart"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_below="@id/quantities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Product description goes here. Detailed info about product."
+        android:textSize="16sp"
+        android:textColor="#616161" />
+
+    <!-- Bottom Divider -->
+    <View
+        android:layout_below="@id/description"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="#E0E0E0" />
+
+</RelativeLayout>
