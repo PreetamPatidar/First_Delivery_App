@@ -20,6 +20,13 @@ import java.util.List;
 
 public class AdminActivity extends AppCompatActivity {
 
+    Button btnAdminLogout;
+    Button btnAdminProductManagement;
+    TextView tv;
+    RecyclerView recyclerView;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

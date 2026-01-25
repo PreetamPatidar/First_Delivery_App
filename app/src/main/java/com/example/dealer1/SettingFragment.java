@@ -68,6 +68,7 @@ public class SettingFragment extends Fragment {
                 editor.apply();
                 Intent i = new Intent(requireActivity(), SplashActivity.class);
                 startActivity(i);
+                requireActivity().finish();
 
 
             }
