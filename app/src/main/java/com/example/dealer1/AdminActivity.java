@@ -65,6 +65,7 @@ public class AdminActivity extends AppCompatActivity {
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction
                                 .replace(R.id.main1, new AdminAddProductFragment())
+                                .addToBackStack(null)
                                 .commit();
             }
         });
