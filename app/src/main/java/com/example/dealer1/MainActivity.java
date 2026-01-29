@@ -118,12 +118,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                setContentView(R.layout.fragment_order);
+
 
 
                 if(savedInstanceState == null) {
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.orderFragmentContainer, new OrderFragment())
+                            .replace(R.id.main, new OrderFragment())
                             .addToBackStack(null)
                             .commit();
                 }
@@ -137,13 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onClick(View v) {
-                    recyclerView.setVisibility(View.GONE);
-                    btnMenu.setVisibility(View.GONE);
-                    btnCart.setVisibility(View.GONE);
-                    btnHelp.setVisibility(View.GONE);
-                    btnOrder.setVisibility(View.GONE);
-                    welcome.setVisibility(View.GONE);
-                    layout.setVisibility(View.GONE);
+
 
 
 
