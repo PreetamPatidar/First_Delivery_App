@@ -75,6 +75,11 @@ public class AdminActivity extends AppCompatActivity {
                                 .replace(R.id.main1, new AdminAddProductFragment())
                                 .addToBackStack(null)
                                 .commit();
+
+                btnAdminLogout.setVisibility(View.VISIBLE);
+                recyclerView.setVisibility(View.VISIBLE);
+                btnAdminProductManagement.setVisibility(View.VISIBLE);
+                tv.setVisibility(View.VISIBLE);
             }
         });
 
