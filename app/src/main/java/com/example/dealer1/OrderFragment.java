@@ -65,6 +65,7 @@ public class OrderFragment extends Fragment {
             public void onClick(View v) {
                 Intent i = new Intent(requireActivity(), MainActivity.class);
                 startActivity(i);
+                requireActivity().finish();
             }
         });
         return view;
