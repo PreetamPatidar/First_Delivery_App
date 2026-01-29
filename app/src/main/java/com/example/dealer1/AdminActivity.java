@@ -38,7 +38,6 @@ public class AdminActivity extends AppCompatActivity {
          tv = findViewById(R.id.adminTv);
         recyclerView = findViewById(R.id.AdminRecyclerView);
 
-        RecyclerView recyclerView = findViewById(R.id.AdminRecyclerView);
 
         AppDatabase db = AppDatabase.getInstance(this);
 
@@ -56,6 +55,7 @@ public class AdminActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AdminActivity.this, SplashActivity.class));
+                finish();
             }
         });
 
