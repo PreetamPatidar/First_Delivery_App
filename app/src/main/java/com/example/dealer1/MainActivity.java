@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                setContentView(R.layout.fragment_cart);
+
 
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.cartFragmentContainer, new CartFragment())
