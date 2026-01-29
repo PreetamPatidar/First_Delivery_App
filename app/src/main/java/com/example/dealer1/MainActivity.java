@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.cartFragmentContainer, new CartFragment())
+                            .replace(R.id.main, new CartFragment())
                             .addToBackStack(null)
                             .commit();
 
