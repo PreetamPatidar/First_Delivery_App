@@ -22,8 +22,8 @@ import java.util.Objects;
 public class LoginFragment extends Fragment {
 
 
-    private  static final String adminEmail = "1";
-    private  static final String adminPass = "1";
+    private  static final String adminEmail = "Admin@gmail.com";
+    private  static final String adminPass = "admin@123";
 
     AppDatabase db;
 
