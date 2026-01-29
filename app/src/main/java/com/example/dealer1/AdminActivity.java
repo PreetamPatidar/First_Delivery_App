@@ -33,9 +33,10 @@ public class AdminActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_admin);
 
-        Button btnAdminLogout = findViewById(R.id.btnAdminLogout);
-        Button btnAdminProductManagement = findViewById(R.id.btnAdminProductManagment);
-        TextView tv = findViewById(R.id.adminTv);
+         btnAdminLogout = findViewById(R.id.btnAdminLogout);
+         btnAdminProductManagement = findViewById(R.id.btnAdminProductManagment);
+         tv = findViewById(R.id.adminTv);
+        recyclerView = findViewById(R.id.AdminRecyclerView);
 
         RecyclerView recyclerView = findViewById(R.id.AdminRecyclerView);
 
