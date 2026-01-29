@@ -78,6 +78,7 @@ public class SettingFragment extends Fragment {
             public void onClick(View v) {
                 Intent i = new Intent(getContext(), MainActivity.class);
                 startActivity(i);
+                requireActivity().finish();
             }
         });
 
