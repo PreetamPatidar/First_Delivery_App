@@ -2,9 +2,11 @@ package com.example.dealer1;
 
 import static android.content.Context.MODE_PRIVATE;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -14,6 +16,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
 
@@ -41,6 +48,7 @@ public class SignUpFragment extends Fragment {
     EditText name, email, password;
     Button btnSignup;
     TextView goToLogin;
+    FirebaseAuth mAuth;
 
 
     @Override
@@ -55,6 +63,8 @@ public class SignUpFragment extends Fragment {
         password = v.findViewById(R.id.passSignup);
         btnSignup = v.findViewById(R.id.btnSignup);
         goToLogin = v.findViewById(R.id.goToLogin);
+
+        mAuth = FirebaseAuth.getInstance();
 
         btnSignup.setOnClickListener(view -> {
             String etName = name.getText().toString().trim();
@@ -73,6 +83,28 @@ public class SignUpFragment extends Fragment {
                 Toast.makeText(getContext(), "User already exists", Toast.LENGTH_SHORT).show();
                 return;
             }
+
+            mAuth.createUserWithEmailAndPassword(etEmail, etPass)
+                    .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Toast.makeText(requireActivity(), "Account Created",
+                                        Toast.LENGTH_SHORT).show();
+
+
+                            } else {
+                                // If sign in fails, display a message to the user.
+
+                                Toast.makeText(requireActivity(), "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+                    });
+
+
 
             dao.insertUser(new User(etName, etEmail, etPass));
 

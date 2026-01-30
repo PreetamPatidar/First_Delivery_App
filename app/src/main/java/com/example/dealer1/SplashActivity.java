@@ -14,6 +14,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.sql.Time;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -23,14 +26,14 @@ public class SplashActivity extends AppCompatActivity {
 
     private static  final String myPreference = "preference";
 
+    FirebaseAuth mAuth;
+
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        AppCompatDelegate.setDefaultNightMode(
-                AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-        );
+
 
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
@@ -71,6 +74,15 @@ public class SplashActivity extends AppCompatActivity {
 
 
             runOnUiThread(() -> {
+
+                mAuth = FirebaseAuth.getInstance();
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                if (user != null) {
+                    // User is signed in
+                    Intent i = new Intent(SplashActivity.this, MainActivity.class);
+                    startActivity(i);
+                    finish();
+                }
 
                 SharedPreferences prefs = getSharedPreferences(myPreference, MODE_PRIVATE);
                 boolean isLogin = prefs.getBoolean("isLogin", false);

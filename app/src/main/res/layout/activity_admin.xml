@@ -30,7 +30,8 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:background="#F5F5F5"/>
     </com.google.android.material.card.MaterialCardView>
 
     <!-- FRAGMENT CONTAINER (if needed later) -->

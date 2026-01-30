@@ -43,11 +43,15 @@
             android:hint="Product Name"
             android:background="@drawable/edittext_bg"
             android:padding="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:inputType="text"/>
 
         <!-- Product Price -->
         <EditText
             android:id="@+id/productPrice"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="Product Price"
@@ -61,6 +65,8 @@
             android:id="@+id/productDesc"
             android:layout_width="match_parent"
             android:layout_height="90dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:hint="Product Description"
             android:background="@drawable/edittext_bg"
             android:inputType="textMultiLine"

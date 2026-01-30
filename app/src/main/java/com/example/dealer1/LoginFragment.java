@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -16,6 +17,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
 
@@ -42,6 +48,7 @@ public class LoginFragment extends Fragment {
     EditText email, password;
     Button btnLogin;
     TextView goToSignup;
+    FirebaseAuth mAuth;
 
 
     @Override
@@ -56,6 +63,8 @@ public class LoginFragment extends Fragment {
         btnLogin = v.findViewById(R.id.btnLogin);
         goToSignup = v.findViewById(R.id.goToSignup);
 
+        mAuth = FirebaseAuth.getInstance();
+
         db = AppDatabase.getInstance(getContext());
 
         btnLogin.setOnClickListener(view -> {
@@ -68,7 +77,14 @@ public class LoginFragment extends Fragment {
             if(etEmail.equals(adminEmail) && etPass.equals(adminPass)){
                 startActivity(new Intent(requireContext(), AdminActivity.class));
             }
-            else if (user != null) {
+            if(etEmail.isEmpty() || etPass.isEmpty()){
+                Toast.makeText(requireActivity(), "Enter Email and Password", Toast.LENGTH_SHORT).show();
+
+
+            }else{
+
+            }
+            if (user != null) {
 
 
                 // Save with SharedPreferences
@@ -82,12 +98,52 @@ public class LoginFragment extends Fragment {
 
 
                 Toast.makeText(getContext(), "Login Successful", Toast.LENGTH_SHORT).show();
+                mAuth.signInWithEmailAndPassword(etEmail, etPass)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                                if (task.isSuccessful()) {
+                                    // Sign in success, update UI with the signed-in user's information
+                                    Toast.makeText(requireActivity(), "Login Success",
+                                            Toast.LENGTH_SHORT).show();
+
+                                } else {
+                                    // If sign in fails, display a message to the user.
+
+                                    Toast.makeText(requireActivity(), "Authentication failed.",
+                                            Toast.LENGTH_SHORT).show();
+
+                                }
+                            }
+                        });
 
 
                 startActivity(new Intent(requireActivity() , MainActivity.class));
                 requireActivity().finish();
             } else {
-                Toast.makeText(getContext(), "Invalid Email or Password", Toast.LENGTH_SHORT).show();
+                mAuth.signInWithEmailAndPassword(etEmail, etPass)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                                if (task.isSuccessful()) {
+                                    // Sign in success, update UI with the signed-in user's information
+                                    Toast.makeText(requireActivity(), "Login Success",
+                                            Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(requireActivity() , MainActivity.class));
+                                    requireActivity().finish();
+
+                                } else {
+                                    // If sign in fails, display a message to the user.
+
+                                    Toast.makeText(requireActivity(), "Authentication failed.",
+                                            Toast.LENGTH_SHORT).show();
+
+                                }
+                            }
+                        });
+                Toast.makeText(getContext(), "Something wrong", Toast.LENGTH_SHORT).show();
             }
 
         });
